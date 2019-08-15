@@ -12,10 +12,10 @@ import barData
 rob = main.apiCall("link")
 
 if rob.Visible:
-	print "succesfully connected."
+    print "succesfully connected."
 else:
-	print "No instance of Robot found. Exiting..."
-	sys.exit()	
+    print "No instance of Robot found. Exiting..."
+    sys.exit()
 
 bars = barData.selectedBeams(rob)
-barData.getNodes(rob,bars)
+barData.getNodes(rob.bars)
