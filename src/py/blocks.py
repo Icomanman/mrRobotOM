@@ -27,18 +27,13 @@ def getBeamId(memb_sel, elem_no = 1):
 	return bar_elem
 
 def getBeamGroup(memb_sel):
+	total_count = memb_sel.count
 	nos = list()
 	beam_group = list()
-	total_count = memb_sel.count
 	for x in range(total_count):
-		beam_group.append(getBeamId(memb_sel,x))
-		nos.append(x)
-	del(x)
-
-	print x
-
-	for x in beam_group:
+		beam_group.append(getBeamId(memb_sel, x + 1))
+		nos.append(x + 1)
 		print x, ":", beam_group[x]
-	
+	del(x)
 	
 	return beam_group
