@@ -1,21 +1,21 @@
-
+# starting point of the script
 import os
 import sys
 
 dirname = os.getcwd()
 sys.path.append(dirname + "\\src\\py")
-sys.path.append(dirname + "\\ref")
+sys.path.append(dirname + "\\src\\py\\helpers")
 
 import main
-import barData
+import init
 
 rob = main.apiCall("link")
 
 if rob.Visible:
-    print "succesfully connected."
+    print "App succesfully connected."
 else:
     print "No instance of Robot found. Exiting..."
+    # ADD user prompt to open robot?
     sys.exit()
 
-bars = barData.selectedBeams(rob)
-barData.getNodes(rob.bars)
+init.run(rob)
