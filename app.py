@@ -8,6 +8,7 @@ sys.path.append(dirname + "\\src\\py\\helpers")
 
 import main
 import init
+import results
 
 rob = main.apiCall("link")
 
@@ -18,4 +19,6 @@ else:
     # ADD user prompt to open robot?
     sys.exit()
 
-init.run(rob)
+# init.run(rob)
+
+results.pullResults(rob)
